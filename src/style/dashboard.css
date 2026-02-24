@@ -216,3 +216,50 @@
     color: var(--text-muted);
     margin: 0;
 }
+
+/* ════════════════════════════════
+   RESPONSIVE — Dashboard Page
+════════════════════════════════ */
+@media (max-width: 768px) {
+    .dashboard-banner {
+        padding: 24px;
+        gap: 16px;
+    }
+
+    .banner-title {
+        font-size: 1.35rem;
+    }
+
+    .dashboard-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quick-actions {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 540px) {
+    .dashboard-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .banner-icon-wrap {
+        display: none;
+    }
+
+    /* hide emoji on tiny screens */
+    .dashboard-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .quick-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .progress-card {
+        padding: 16px;
+    }
+}

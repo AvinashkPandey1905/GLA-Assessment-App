@@ -14,6 +14,7 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = React.useState(
     () => !!localStorage.getItem("userData")
   );
+  const [sidebarOpen, setSidebarOpen] = React.useState(false);
 
   const handleLogin = () => setIsAuthenticated(true);
   const handleLogout = () => {
@@ -25,21 +26,42 @@ function App() {
     const location = useLocation();
     const noChrome = location.pathname === "/login" || location.pathname === "/logout";
 
+    // Close sidebar on route change (mobile)
+    React.useEffect(() => {
+      setSidebarOpen(false);
+    }, [location.pathname]);
+
     return (
       <div className="App">
-        {!noChrome && <Navbar onLogout={handleLogout} />}
-        <div style={{ display: "flex" }}>
-          {!noChrome && isAuthenticated && <Sidebar onLogout={handleLogout} />}
-          <div
-            className="page-content"
-            style={{
-              marginLeft: (!noChrome && isAuthenticated) ? "220px" : 0,
-              paddingTop: !noChrome ? "32px" : 0,
-              marginTop: !noChrome ? "64px" : 0,
-            }}
+        {!noChrome && (
+          <Navbar
+            onLogout={handleLogout}
+            onMenuToggle={() => setSidebarOpen(o => !o)}
+            sidebarOpen={sidebarOpen}
+          />
+        )}
+
+        <div className="main-shell">
+          {!noChrome && isAuthenticated && (
+            <>
+              {/* Mobile overlay */}
+              <div
+                className={`sidebar-overlay ${sidebarOpen ? "open" : ""}`}
+                onClick={() => setSidebarOpen(false)}
+              />
+              <Sidebar
+                onLogout={handleLogout}
+                isOpen={sidebarOpen}
+                onClose={() => setSidebarOpen(false)}
+              />
+            </>
+          )}
+
+          <main
+            className={`page-content ${(!noChrome && isAuthenticated) ? "with-sidebar" : ""}`}
           >
             {children}
-          </div>
+          </main>
         </div>
       </div>
     );

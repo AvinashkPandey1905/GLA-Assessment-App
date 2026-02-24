@@ -155,3 +155,30 @@
   color: var(--text);
   background: rgba(255, 255, 255, 0.06);
 }
+
+/* ════════════════════════════════
+   RESPONSIVE — Logout Page
+════════════════════════════════ */
+@media (max-width: 540px) {
+  .logout-page {
+    padding: 16px;
+  }
+
+  .logout-card {
+    padding: 32px 20px;
+  }
+
+  .logout-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .logout-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .logout-card h1 {
+    font-size: 1.4rem;
+  }
+}

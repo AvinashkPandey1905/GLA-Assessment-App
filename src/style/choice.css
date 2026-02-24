@@ -187,3 +187,45 @@
   transform: translateY(-2px) scale(1.02);
   box-shadow: 0 8px 28px rgba(79, 70, 229, 0.5);
 }
+
+/* ════════════════════════════════
+   RESPONSIVE — Choice Page
+════════════════════════════════ */
+@media (max-width: 768px) {
+  .choice-section {
+    padding: 20px;
+  }
+
+  .choice-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .selection-counter {
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .selection-counter span:first-child {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .chip {
+    font-size: 0.78rem;
+    padding: 8px 13px;
+  }
+
+  /* floating button becomes bottom bar */
+  .choice-submit-btn {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    width: calc(100% - 32px);
+    text-align: center;
+    border-radius: var(--radius);
+  }
+}

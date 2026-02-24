@@ -346,3 +346,47 @@
   grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
+
+/* ════════════════════════════════
+   RESPONSIVE — Login / Signup Page
+════════════════════════════════ */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .login-card {
+    padding: 32px 28px;
+  }
+
+  .login-title {
+    font-size: 1.4rem;
+  }
+}
+
+/* Mobile — stack form-row fields */
+@media (max-width: 540px) {
+  .login-page {
+    padding: 16px;
+  }
+
+  .login-card {
+    padding: 28px 20px;
+    border-radius: var(--radius);
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    /* single column */
+  }
+
+  .login-title {
+    font-size: 1.25rem;
+  }
+
+  .login-logo {
+    font-size: 2rem;
+  }
+
+  .submit-btn {
+    font-size: 0.9rem;
+  }
+}

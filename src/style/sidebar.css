@@ -8,6 +8,29 @@
   border-right: 1px solid var(--border);
   z-index: 900;
   overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Mobile close button — hidden on desktop */
+.sidebar-close-btn {
+  display: none;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  padding: 6px 9px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: var(--transition);
+  z-index: 10;
+}
+
+.sidebar-close-btn:hover {
+  color: var(--danger);
+  border-color: var(--danger);
 }
 
 .sidebar-inner {
@@ -28,7 +51,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 10px 14px;
+  padding: 11px 14px;
   border-radius: var(--radius-sm);
   font-size: 0.9rem;
   font-weight: 500;
@@ -76,8 +99,8 @@
   font-size: 1rem;
   display: flex;
   align-items: center;
-  transition: var(--transition);
   flex-shrink: 0;
+  transition: var(--transition);
 }
 
 .sidebar-label {
@@ -105,4 +128,38 @@
   background: rgba(239, 68, 68, 0.1);
   color: #fca5a5;
   border-color: var(--danger);
+}
+
+/* ════════════════════════════
+   TABLET + MOBILE  (≤ 1024px)
+   Sidebar becomes a drawer
+════════════════════════════ */
+@media (max-width: 1024px) {
+  .sidebar {
+    transform: translateX(-100%);
+    /* hidden off screen by default */
+    box-shadow: var(--shadow-lg);
+    top: 0;
+    height: 100vh;
+    padding-top: 64px;
+  }
+
+  .sidebar.sidebar-open {
+    transform: translateX(0);
+    /* slides in */
+  }
+
+  .sidebar-close-btn {
+    display: flex;
+  }
+}
+
+/* ════════════════════════════
+   MOBILE  (≤ 480px)
+════════════════════════════ */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100%;
+    max-width: 280px;
+  }
 }

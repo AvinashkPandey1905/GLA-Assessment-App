@@ -1,11 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import {
-  FaTachometerAlt, FaUser, FaListAlt, FaChartBar, FaSignOutAlt
+  FaTachometerAlt, FaUser, FaListAlt, FaChartBar, FaSignOutAlt, FaTimes
 } from "react-icons/fa";
 import "../style/sidebar.css";
 
-const Sidebar = ({ onLogout }) => {
+const Sidebar = ({ onLogout, isOpen, onClose }) => {
   const links = [
     { to: "/dashboard", icon: <FaTachometerAlt />, label: "Dashboard" },
     { to: "/profile", icon: <FaUser />, label: "Profile" },
@@ -14,7 +14,12 @@ const Sidebar = ({ onLogout }) => {
   ];
 
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar ${isOpen ? "sidebar-open" : ""}`}>
+      {/* Mobile close button */}
+      <button className="sidebar-close-btn" onClick={onClose} aria-label="Close menu">
+        <FaTimes />
+      </button>
+
       <div className="sidebar-inner">
         <nav className="sidebar-nav">
           {links.map(({ to, icon, label }) => (
@@ -22,6 +27,7 @@ const Sidebar = ({ onLogout }) => {
               key={to}
               to={to}
               className={({ isActive }) => `sidebar-link${isActive ? " active" : ""}`}
+              onClick={onClose}
             >
               <span className="sidebar-icon">{icon}</span>
               <span className="sidebar-label">{label}</span>
