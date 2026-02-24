@@ -10,8 +10,8 @@
 
 </p>
 
-<p>A personalized <strong>Learning Style Assessment Web App</strong> built for GLA University students.<br/>
-Answer a short quiz and discover whether you're an <em>Active, Visual, Logical</em>, or <em>Collaborative</em> learner — powered by a weighted PDA algorithm and visualized with a radar chart.</p>
+<p>A personalized <strong>Learning Style Assessment Web App</strong> powered by the <strong>Generative Learning Algorithm (GLA)</strong>.<br/>
+Answer a short quiz and discover whether you're an <em>Active, Visual, Logical</em>, or <em>Collaborative</em> learner — scored by a weighted PDA matrix and visualized with a radar chart.</p>
 
 </div>
 
@@ -44,9 +44,9 @@ Answer a short quiz and discover whether you're an <em>Active, Visual, Logical</
 
 ---
 
-## 🧪 How the Algorithm Works
+## 🧪 How the GLA Works
 
-The quiz uses a **PDA (Personal Development Assessment) matrix**:
+The **Generative Learning Algorithm (GLA)** uses a **PDA (Personal Development Assessment) matrix** to classify your learning style:
 
 1. Each of the **16 study methods** and **10 YouTube reasons** maps to a `[X, Y]` score pair
 2. Your 5 method picks add `score × 0.12` to both X and Y totals
@@ -77,10 +77,10 @@ The quiz uses a **PDA (Personal Development Assessment) matrix**:
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/gla.git
+git clone https://github.com/AvinashkPandey1905/GLA-Assessment-App.git
 
 # Navigate into the project
-cd gla
+cd GLA-Assessment-App
 
 # Install dependencies
 npm install
@@ -154,6 +154,6 @@ Pull requests are welcome! For major changes, please open an issue first.
 ---
 
 <div align="center">
-  <p>Built with ❤️ for <strong>GLA University</strong></p>
+  <p>Built with ❤️ using the <strong>Generative Learning Algorithm (GLA)</strong></p>
   <p><em>"Know how you learn — learn how you grow."</em></p>
 </div>
