@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/badge/React-18.3-61DAFB?style=for-the-badge&logo=react&logoColor=white" />
   <img src="https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
   <img src="https://img.shields.io/badge/Chart.js-Radar-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white" />
-  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" />
+
 </p>
 
 <p>A personalized <strong>Learning Style Assessment Web App</strong> built for GLA University students.<br/>
@@ -150,10 +150,6 @@ src/
 Pull requests are welcome! For major changes, please open an issue first.
 
 ---
-
-## 📄 License
-
-This project is licensed under the **MIT License**.
 
 ---
 
